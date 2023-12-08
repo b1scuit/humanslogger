@@ -23,9 +23,9 @@ const (
 )
 
 func Init() {
-	slog.SetDefault(NewHandler(
+	slog.SetDefault(slog.New(NewHandler(
 		WithLevel(slog.LevelDebug),
-	))
+	)))
 }
 
 type HandlerOption func(*Handler)
